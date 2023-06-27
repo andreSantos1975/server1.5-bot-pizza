@@ -88,6 +88,7 @@ COMANDOS DEPOIS DE CLONAR ARQUIVO NO GIT HUB
 
 python3 -m venv ./venv
 
+ESSE COMANDO DEVE SER EXCECUTADO FORA DO AMBIENTE VIRTUAL
 py -3.9 -m venv venv
 
 .\venv\Scripts\activate
@@ -97,3 +98,8 @@ pip install -r requirements.txt
 
 ATUALIZANDO O PIP
 python.exe -m pip install --upgrade pip
+
+ESSE COMANDO DEVE SER EXECUTADO DENTRO DO AMBIENTE VIRTUAL
+pip install rasa
+
+rasa run --enable-api
