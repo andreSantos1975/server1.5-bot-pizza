@@ -1,4 +1,14 @@
 ==========================================================================================================================================
 
-Executar o servidor Rasa
-\
+Executar servidor
+npm run dev
+
+
+Executar o ambiente virtual
+.\venv\Scripts\activate
+
+Encerrar ambiente virtual
+deactivate
+
+Executar o servidor rasa
+rasa run --enable-api

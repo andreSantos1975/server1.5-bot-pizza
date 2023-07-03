@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const axios = require('axios');
+
 const httpServer = require('http').createServer(app);
 const io = require('socket.io')(httpServer, {
   cors: {
@@ -9,39 +11,46 @@ const io = require('socket.io')(httpServer, {
   },
 });
 
-const axios = require('axios');
+// Importe o arquivo assistant1.js
+const assistant1Router = require('./routes/assistant1');
 
+app.use(express.json());
+
+// Adicione a rota do arquivo assistant1.js
+app.use('/assistant1', assistant1Router);
+
+// Rota para manipular a conexão de socket e receber mensagens do frontend
 io.on('connection', (socket) => {
+  // Evento 'postUser' para receber mensagens do frontend
   socket.on('postUser', (data) => {
-    // Aqui você pode acessar os dados enviados pelo frontend
-    const { message } = data;
+    const { message } = data; // Obtém a mensagem enviada pelo frontend
 
-    // Realize as operações necessárias com os dados recebidos do frontend
+    // Aqui você pode realizar as operações necessárias com os dados recebidos do frontend
 
     // Exemplo de resposta para o frontend
     const responseData = {
       message: `Mensagem recebida: ${message}`,
     };
 
-    console.log('message vinda do MessageParser:', message)
-    // Enviar a mensagem para o servidor Rasa
-    axios.post('http://192.168.1.121:5005/webhooks/rest/webhook', {
-      sender: "user123",
-      message: message,
-    })
-    .then((response) => {
-      // Aqui você pode processar a resposta recebida do servidor Rasa
-      const rasaResponse = response.data;
-      console.log('Resposta do servidor Rasa:', rasaResponse);
+    // Enviar a mensagem para o servidor Rasa usando uma solicitação HTTP
+    axios
+      .post('http://192.168.1.121:5005/webhooks/rest/webhook', {
+        sender: "user123",
+        message: message,
+      })
+      .then((response) => {
+        // Aqui você pode processar a resposta recebida do servidor Rasa
+        const rasaResponse = response.data;
+        console.log('Resposta do servidor Rasa:', rasaResponse);
 
-      // Enviar a resposta do Rasa para o frontend
-      socket.emit('responseUser', rasaResponse);
-    })
-    .catch((error) => {
-      console.error('Erro ao enviar a mensagem para o servidor Rasa:', error);
-    });
+        // Enviar a resposta do Rasa de volta para o frontend
+        socket.emit('responseUser', rasaResponse);
+      })
+      .catch((error) => {
+        console.error('Erro ao enviar a mensagem para o servidor Rasa:', error);
+      });
 
-   // console.log('Resposta para o frontend:', responseData);
+    //console.log('Resposta para o frontend:', responseData);
   });
 });
 
