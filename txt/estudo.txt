@@ -1,0 +1,32 @@
+=======================================================================================================================================
+
+AUTENTICAÇÃO E ACEESSO AOS DADOS DO CLIENTE
+
+A lógica para desenvolver um chatbot em um site de restaurante que verifica se a pessoa fez login e obtém os dados do cliente do 
+banco de dados envolve várias etapas. O código que você forneceu está focado na comunicação entre o frontend, o servidor e o assistente 
+virtual usando o Rasa.
+
+Aqui estão as etapas básicas para adicionar a funcionalidade de login e acesso aos dados do cliente ao chatbot em um site de 
+restaurante:
+
+Criação de um sistema de autenticação: Implemente um sistema de autenticação no backend do site de restaurante, onde os usuários 
+podem fazer login e receber um token de autenticação válido.
+
+Armazenamento de dados do cliente: No banco de dados do restaurante, crie uma tabela ou coleção para armazenar os dados dos 
+clientes. Isso pode incluir informações como nome, endereço, histórico de pedidos, preferências alimentares, etc.
+
+Autenticação no chatbot: Quando um usuário faz login no site, o servidor deve verificar a validade do token de autenticação. 
+Em seguida, o servidor pode associar o token ao cliente correspondente no banco de dados.
+
+Identificação do cliente no chatbot: Quando um usuário inicia uma conversa com o chatbot, o frontend pode enviar o token de 
+autenticação para o servidor. O servidor pode usar o token para identificar o cliente correspondente no banco de dados e 
+recuperar suas informações.
+
+Integração do chatbot com os dados do cliente: O servidor pode passar as informações do cliente para o assistente virtual 
+durante a interação. Isso permite que o chatbot personalize as respostas com base nas preferências do cliente, histórico de 
+pedidos, etc.
+
+No código fornecido, não há menção de um banco de dados específico nem da lógica para autenticação e acesso aos dados do 
+cliente. Esses aspectos devem ser desenvolvidos separadamente, além da comunicação com o assistente virtual usando o Rasa.
+
+Lembre-se de que a implementação exata pode variar dependendo das tecnologias e estruturas específicas que você está usando.
