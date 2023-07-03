@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const path = require('path');
 
 const httpServer = require('http').createServer(app);
 const io = require('socket.io')(httpServer, {
@@ -54,14 +53,6 @@ io.on('connection', (socket) => {
     //console.log('Resposta para o frontend:', responseData);
   });
 });
-
-
-// Configurar o fallback para o roteamento
-///app.use(express.static(path.join(__dirname, 'client/build')));
-
-///app.get('*', (req, res) => {
- /// res.sendFile(path.join(__dirname, 'client/build/index.html'));
-///});
 
 httpServer.listen(5000, () => {
   console.log('Server started on port 5000');
