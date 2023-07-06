@@ -3,21 +3,21 @@ const banco1 = require('../banco/banco1');
 const express = require('express');
 const router = express.Router();
 
-// Recebe requisição do Login.jsx frontend
+// Recebe requisição do frontend diretório login arquivo Login.jsx
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     console.log('Email no server:', email);
 
     try {
-        // Verifique as credenciais no banco de dados
+        // Verifique as credenciais no banco de dados diretório banco arquivo banco1.js
         const user = await banco1.findUserByEmail(email);
         console.log('user no arquivo auth_site.js:', user);
         if (user && user.password === password) {
-            // Usuário válido, retorne uma resposta de sucesso
+            // Usuário válido, retorne uma resposta de sucesso para o frontend diretório login arquivo Login.jsx
             res.status(200).json({ message: 'Login bem-sucedido' });
         } else {
-            // Usuário inválido, retorne uma resposta de erro
-            res.status(401).json({ message: 'Credenciais inválidas' });
+            // Usuário inválido, retorne uma resposta de erro para o frontend diretório login arquivo Login.jsx
+            res.status(401).json({ message: 'senha ou email inválido' });
         }
 
     } catch (error) {
