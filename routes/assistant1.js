@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-
+ // Realize as operações necessárias com os dados recebidos do frontend para o assistente virtual 1
 router.post('/postUser', (req, res) => {
   const { message } = req.body;
 
-  // Realize as operações necessárias com os dados recebidos do frontend para o assistente virtual 1
+ 
 
   // Exemplo de resposta para o frontend
   const responseData = {
