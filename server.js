@@ -15,38 +15,20 @@ const io = require('socket.io')(httpServer, {
   },
 });
 
-// Importe o arquivo assistant1.js
+// Importe os arquivos de roteamento assistant1.js e
 const assistant1Router = require('./routes/assistant1');
-const banco1 = require('./bancos/banco1');
 
+const authRouter = require('./routes/auth_site'); 
+
+
+//Permite analisar o corpo das solicitações recebidas no formato JSON.
 app.use(express.json());
 
-// Adicione a rota do arquivo assistant1.js
+//Todas as rotas definidas no arquivo assistant1.js estarão disponíveis com esse prefixo. 
+//Por exemplo, se houver uma rota definida como '/postUser' no arquivo assistant1.js, a rota completa seria '/assistant1/postUser'
 app.use('/assistant1', assistant1Router);
-
-
-
-//Recebe requisição do Login.jsx frontend
-app.post('/login', (req, res) => {
-  const { email, password } = req.body;
-  console.log('Email e password no server:', email);
-
-  // Verifique as credenciais no banco de dados
-  const user = banco1.findUserByEmail(email);
-  if (user && user.password === password) {
-    // Usuário válido, retorne uma resposta de sucesso
-    res.status(200).json({ message: 'Login bem-sucedido' });
-  } else {
-    // Usuário inválido, retorne uma resposta de erro
-    res.status(401).json({ message: 'Credenciais inválidas' });
-  }
-});
-
-
-
-
-
-
+// Todas as rotas definidas no arquivo auth_site.js estarão disponíveis diretamente no root do aplicativo
+app.use('/', authRouter); 
 
 
 
@@ -55,7 +37,7 @@ app.post('/login', (req, res) => {
 io.on('connection', (socket) => {
   // Evento 'postUser' para receber mensage do frontend MessageParse.jsx /diretório react-chatbot-kit
   socket.on('postUser', (data) => {
-    const { message } = data; 
+    const { message } = data;
 
     // Exemplo de resposta para o frontend
     const responseData = {
@@ -87,7 +69,7 @@ io.on('connection', (socket) => {
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('*', (req, res) => {
- res.sendFile(path.join(__dirname, 'client/build/index.html'));
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
 
