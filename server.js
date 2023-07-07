@@ -74,6 +74,12 @@ io.on('connection', (socket) => {
   });
 });
 
+// Verificar se a rota /enviar está sendo chamada
+app.use('/enviar', (req, res, next) => {
+  console.log('Rota /enviar foi chamada.'); // Log da rota sendo chamada
+  next();
+});
+
 // Configurar o fallback para o roteamento
 app.use(express.static(path.join(__dirname, 'client/build')));
 

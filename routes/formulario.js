@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql2');
 
+console.log('Arquivo formulario.js foi chamado.');
+
+
+
 // Configurações de conexão com o banco de dados
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -12,11 +16,12 @@ const connection = mysql.createConnection({
 
 // Rota para lidar com o envio do formulário
 router.post('/enviar', (req, res) => {
-  const { nome, email, telefone, cidade, estado, nome_empresa, atividade_empresa } = req.body;
+    console.log('Rota /enviar foi chamada.'); // Log da rota sendo chamada
+  const { nome, email, telefone, cidade, estado, empresa, atividade } = req.body;
 
   // Executar uma consulta SQL para inserir os dados no banco de dados
-  const query = `INSERT INTO formulario (nome, email, telefone, cidade, estado, nome_empresa, atividade_empresa) VALUES (?, ?, ?, ?, ?, ?, ?)`;
-  connection.query(query, [nome, email, telefone, cidade, estado, nome_empresa, atividade_empresa], (error, results) => {
+  const query = `INSERT INTO formulario (nome, email, telefone, cidade, estado, empresa, atividade) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+  connection.query(query, [nome, email, telefone, cidade, estado, empresa, atividade], (error, results) => {
     if (error) {
       console.error('Erro ao inserir os dados no banco de dados:', error);
       return res.status(500).json({ error: 'Ocorreu um erro ao processar a requisição.' });
