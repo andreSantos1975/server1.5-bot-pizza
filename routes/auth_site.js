@@ -14,7 +14,7 @@ router.post('/login', async (req, res) => {
         console.log('user no arquivo auth_site.js:', user);
         if (user && user.password === password) {
             // Usuário válido, retorne uma resposta de sucesso para o frontend diretório login arquivo Login.jsx
-            res.status(200).json({ message: 'Login bem-sucedido' });
+            res.status(200).json({ message: 'Login bem-sucedido', user: { /* informações do usuário */ } });
         } else {
             // Usuário inválido, retorne uma resposta de erro para o frontend diretório login arquivo Login.jsx
             res.status(401).json({ message: 'senha ou email inválido' });
