@@ -5,14 +5,15 @@ const router = express.Router();
 
 // Recebe requisição do frontend diretório login arquivo Login.jsx
 router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    console.log('Email no server:', email);
+    const { email, senha } = req.body;
+    console.log('Email no auth_site:', email);
+    console.log('Senha no auth_site:', senha);
 
     try {
         // Verifique as credenciais no banco de dados diretório banco arquivo banco1.js
         const user = await banco1.findUserByEmail(email);
         console.log('user no arquivo auth_site.js:', user);
-        if (user && user.password === password) {
+        if (user && user.senha.toString() === senha) {
             // Usuário válido, retorne uma resposta de sucesso para o frontend diretório login arquivo Login.jsx
             res.status(200).json({ message: 'Login bem-sucedido', user: { /* informações do usuário */ } });
         } else {

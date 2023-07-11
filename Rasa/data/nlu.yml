@@ -29,6 +29,16 @@ nlu:
     - Bye Bye
     - até mais
 
+- intent: ask_cost
+  examples: |
+    - Qual é o custo para comprar um site?
+    - Quanto custa um site?
+    - Quero saber o preço de um site
+    - Qual é o valor para adquirir um site?
+    - Gostaria de saber o custo para comprar um site
+    - Quanto devo pagar para ter um site?
+    - Qual é o preço de um site?
+
 - intent: affirm
   examples: |
     - sim

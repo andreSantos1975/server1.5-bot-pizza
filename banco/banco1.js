@@ -10,6 +10,7 @@ const connection = mysql.createConnection({
 
 // Função para encontrar um usuário pelo email no banco de dados
 function findUserByEmail(email) {
+  console.log('email no arquivo banco1.js:', email)
   return new Promise((resolve, reject) => {
     // Execute uma consulta SQL para encontrar o usuário com base no email
     const query = 'SELECT * FROM users WHERE email = ?';
@@ -20,7 +21,7 @@ function findUserByEmail(email) {
         // Se um usuário for encontrado, retorne-o
         // Caso contrário, retorne null
         const user = results.length ? results[0] : null;
-        console.log('Resultado da consulta no banco:', user);
+        console.log('Resultado da consulta no banco1:', user);
         
         resolve(user);
       }

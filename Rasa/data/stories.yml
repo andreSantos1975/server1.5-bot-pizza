@@ -9,6 +9,15 @@ stories:
   - intent: mood_great
   - action: utter_happy
 
+- story: solicitando o custo para comprar um site
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_cost
+  - action: utter_provide_cost
+  - intent: goodbye
+  - action: utter_goodbye
+
 - story: sad path 1
   steps:
   - intent: greet

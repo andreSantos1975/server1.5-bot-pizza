@@ -17,11 +17,11 @@ const connection = mysql.createConnection({
 // Rota para lidar com o envio do formulário
 router.post('/enviar', (req, res) => {
     console.log('Rota /enviar foi chamada.'); // Log da rota sendo chamada
-  const { nome, email, telefone, cidade, estado, empresa, atividade } = req.body;
+  const { nome, email, senha, confirmarSenha, telefone, cidade, estado, empresa, atividade } = req.body;
 
   // Executar uma consulta SQL para inserir os dados no banco de dados
-  const query = `INSERT INTO formulario (nome, email, telefone, cidade, estado, empresa, atividade) VALUES (?, ?, ?, ?, ?, ?, ?)`;
-  connection.query(query, [nome, email, telefone, cidade, estado, empresa, atividade], (error, results) => {
+  const query = `INSERT INTO users (nome, email, senha, confirmar_senha, telefone, cidade, estado, empresa, atividade) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  connection.query(query, [nome, email, senha, confirmarSenha, telefone, cidade, estado, empresa, atividade], (error, results) => {
     if (error) {
       console.error('Erro ao inserir os dados no banco de dados:', error);
       return res.status(500).json({ error: 'Ocorreu um erro ao processar a requisição.' });
