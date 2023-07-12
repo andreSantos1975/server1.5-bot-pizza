@@ -1,6 +1,12 @@
 const axios = require('axios');
+
+
 ///const { findUserByEmail } = require('./banco/banco1');
 ///const banco1 = require('./banco/banco1');
+const auth = require('./routes/auth_site');
+const { email, senha } = req.body;
+console.log('Email no socketConnections:', email);
+console.log('Senha no socketConnections:', senha);
 
 console.log('Testando soketConnection!!!');
 
@@ -32,7 +38,7 @@ function handleSocketConnection(io, user) {
             console.log(`Resposta do servidor Rasa para o usuário ${user}:`, rasaResponse);
 
             // Enviar a resposta do Rasa de volta para o frontend
-            socket.emit(`responseUser_${user}`, rasaResponse);
+            socket.emit(`responseUser`, rasaResponse);
           })
           .catch((error) => {
             console.error(`Erro ao enviar a mensagem para o servidor Rasa para o usuário ${user}:`, error);
@@ -41,7 +47,7 @@ function handleSocketConnection(io, user) {
           // Usuário não autenticado - envie uma mensagem informando que o login falhou
           const errorMessage = 'Login falhou. Por favor, faça login corretamente.';
           const errorResponse = [{ text: errorMessage }];
-          socket.emit(`responseUser_${user}`, errorResponse);
+          socket.emit(`responseUser`, errorResponse);
         }
       } catch (error) {
         console.error(`Erro ao autenticar o login do usuário ${user}:`, error);
