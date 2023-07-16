@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql2');
 
-console.log('Arquivo formulario.js foi chamado.');
+//console.log('Arquivo formulario.js foi chamado.'); //Testando com .log
 
 
 
@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
 
 // Rota para lidar com o envio do formulário
 router.post('/enviar', (req, res) => {
-    console.log('Rota /enviar foi chamada.'); // Log da rota sendo chamada
+   // console.log('Rota /enviar foi chamada.'); //Testando chamada enviar .log
   const { nome, email, senha, confirmarSenha, telefone, cidade, estado, empresa, atividade } = req.body;
 
   // Executar uma consulta SQL para inserir os dados no banco de dados

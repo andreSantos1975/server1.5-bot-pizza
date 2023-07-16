@@ -12,3 +12,172 @@ deactivate
 
 Executar o servidor rasa
 rasa run --enable-api
+
+===================================================================================================================================
+
+
+YOUTUBE: SETUP RASA CHATBOT ON WHATSAPP
+Innovate Yourself
+
+========================================================================================
+
+
+EXIBIR VERSÃO PYTHON
+
+>python --version
+
+LISTAR TODAS VERSÕES PYTHON
+
+>py -0p
+----------------------------------------------------------------------------------------
+
+---------CONFIGURAÇÃO PROJETO RASA CHAT BOT----------------------------------------------
+----------------------------------------------------------------
+
+=======================================================================================================================
+========================================================================================================================
+
+---------------------------------20-05-23--------------------------07:13-------
+---------CONFIGURAÇÃO PROJETO RASA CHAT BOT----------------------------------------------
+----------------------------------------------------------------
+
+>python3 --version
+
+>pip3 --version
+
+*INTALAÇÃO FORA DA PASTA RASA
+>pip3 install -U pip
+
+>python3 -m venv ./venv
+
+*DESATIVAR O AMBIENTE VIRTUAL
+>deactivate
+
+*PARA USAR UMA VERSÃO ESPECÍFICA DO PYTHON, EXCECUTAR O COMANDO FORA DO AMBIENTE VIRTUAL
+>py -3.9 -m venv venv
+
+DEPOIS DE EXECUTAR O COMANDO ACIMA EXCECUTAR:
+*CRIA UM AMBIENTE VIRTUAL
+>.\venv\Scripts\activate
+
+*VERIFICAR A VERSÃO PYTHON ATUAL
+>python --version
+
+>pip3 install rasa
+
+>rasa init
+
+ATUALIZAR O PIP
+>python.exe -m pip install --upgrade pip
+
+*INICIAR O SERVIDOR DE AÇÃO
+>rasa run actions
+
+
+*LISTAR AS VERSÕES DO PYTHON
+>py -0p
+
+
+*VERIFICAR A VERSÃO PYTHON ATUAL
+>python --version
+
+*INICIAR O INTERACTIVE
+>rasa interactive
+
+*INICIAR O SHELL
+>rasa shell
+
+======================================================================================================
+------------------------------------------------------------------------------------------------------
+*INSTALAR BIBLIOTECA RASA SDK OBS: NECESSÁRIO ESTA NO AMBIENTE VIRTUAL
+
+Para instalar a biblioteca Rasa SDK em um projeto Rasa, você precisa adicionar a dependência ao 
+seu arquivo requirements.txt
+
+*CRIAR O ARQUIVO REQUIREMENTS.TXT
+Siga estas etapas para criar o arquivo requirements.txt:
+
+Exemplo:
+>pip freeze > requirements.txt
+
+Isso criará um arquivo chamado requirements.txt no diretório atual com todas as bibliotecas instaladas 
+e suas versões.
+Agora você deve ter o arquivo requirements.txt criado no diretório do seu projeto. Você pode então executar 
+o comando
+para instalar todas as bibliotecas listadas no arquivo. Certifique-se de estar no mesmo diretório 
+onde o arquivo requirements.txt está localizado ao executar o comando.
+
+INSTALAR AS DEPENDÊNCIAS 
+
+>pip install -r requirements.txt 
+
+=========================================================================================================================
+
+=============================================================================================================
+
+INSTALAR O CORS ANTES DE EXECUTAR rasa run --enable-api --cors "*"
+
+pip install -U flask-cors
+
+INSTALAR EXPRESS CORS DOTENV
+
+npm install express cors dotenv
+
+
+INSTALAR AXIOS
+
+npm install axios
+
+--------------------------------------------------------------------------------------------
+DENTRO DA PASTA SRC EXECUTAR >node servidor
+
+DENTRO DO AMBIENTE VIRTUAL EXECUTAR >rasa run --enable-api --cors "*"
+
+AMBIENTE VIRTUAL
+
+>.\venv\Scripts\activate
+
+===============================================================================================
+---------------------------------------------------------------------------------------------------
+=================================================================================================
+=================================================================================================
+================================================================================================
+
+DEPOIS DE CLONAR O PROJETO NO GITHUB
+
+pip3 install -U pip
+
+python3 -m venv ./venv
+
+py -3.8 -m venv venv
+
+DEPOIS DE EXECUTAR O COMANDO ACIMA EXCECUTAR:
+*CRIA UM AMBIENTE VIRTUAL
+.\venv\Scripts\activate
+
+pip install -U flask-cors
+
+pip3 install rasa
+
+rasa init
+
+rasa run --enable-api
+INSTALAR O CORS ANTES DE EXECUTAR rasa run --enable-api --cors "*"
+
+=============================================================================================================
+
+INSTALAÇÃO DO SERVIDOR
+
+
+pip install -U flask-cors
+
+INSTALAR EXPRESS CORS DOTENV
+
+npm install express cors dotenv
+
+
+INSTALAR AXIOS
+
+npm install axios
+
+--------------------------------------------------------------------------------------------
