@@ -38,54 +38,55 @@ LISTAR TODAS VERSÕES PYTHON
 ========================================================================================================================
 
 ---------------------------------20-05-23--------------------------07:13-------
----------CONFIGURAÇÃO PROJETO RASA CHAT BOT----------------------------------------------
+---------CONFIGURAÇÃO do PROJETO RASA CHAT BOT  do zero    ----------------------------------------------
 ----------------------------------------------------------------
 
->python3 --version
+python3 --version
 
->pip3 --version
+pip3 --version
 
 *INTALAÇÃO FORA DA PASTA RASA
->pip3 install -U pip
+pip3 install -U pip
 
->python3 -m venv ./venv
+python3 -m venv ./venv
 
 *DESATIVAR O AMBIENTE VIRTUAL
->deactivate
+deactivate
 
 *PARA USAR UMA VERSÃO ESPECÍFICA DO PYTHON, EXCECUTAR O COMANDO FORA DO AMBIENTE VIRTUAL
->py -3.9 -m venv venv
+py -3.9 -m venv venv
 
 DEPOIS DE EXECUTAR O COMANDO ACIMA EXCECUTAR:
 *CRIA UM AMBIENTE VIRTUAL
->.\venv\Scripts\activate
+.\venv\Scripts\activate
 
 *VERIFICAR A VERSÃO PYTHON ATUAL
->python --version
+python --version
 
->pip3 install rasa
+pip3 install rasa
 
->rasa init
+
+rasa init
 
 ATUALIZAR O PIP
->python.exe -m pip install --upgrade pip
+python.exe -m pip install --upgrade pip
 
 *INICIAR O SERVIDOR DE AÇÃO
->rasa run actions
+rasa run actions
 
 
 *LISTAR AS VERSÕES DO PYTHON
->py -0p
+py -0p
 
 
 *VERIFICAR A VERSÃO PYTHON ATUAL
->python --version
+python --version
 
 *INICIAR O INTERACTIVE
->rasa interactive
+rasa interactive
 
 *INICIAR O SHELL
->rasa shell
+rasa shell
 
 ======================================================================================================
 ------------------------------------------------------------------------------------------------------
@@ -98,7 +99,7 @@ seu arquivo requirements.txt
 Siga estas etapas para criar o arquivo requirements.txt:
 
 Exemplo:
->pip freeze > requirements.txt
+pip freeze > requirements.txt
 
 Isso criará um arquivo chamado requirements.txt no diretório atual com todas as bibliotecas instaladas 
 e suas versões.
@@ -109,7 +110,7 @@ onde o arquivo requirements.txt está localizado ao executar o comando.
 
 INSTALAR AS DEPENDÊNCIAS 
 
->pip install -r requirements.txt 
+pip install -r requirements.txt 
 
 =========================================================================================================================
 
@@ -135,7 +136,7 @@ DENTRO DO AMBIENTE VIRTUAL EXECUTAR >rasa run --enable-api --cors "*"
 
 AMBIENTE VIRTUAL
 
->.\venv\Scripts\activate
+.\venv\Scripts\activate
 
 ===============================================================================================
 ---------------------------------------------------------------------------------------------------
@@ -159,17 +160,15 @@ pip install -U flask-cors
 
 pip3 install rasa
 
-rasa init
-
 rasa run --enable-api
 INSTALAR O CORS ANTES DE EXECUTAR rasa run --enable-api --cors "*"
 
 =============================================================================================================
 
-INSTALAÇÃO DO SERVIDOR
+INSTALAÇÃO DO SERVIDOR FORA DO AMBIENTE VIRTUAL
 
 
-pip install -U flask-cors
+
 
 INSTALAR EXPRESS CORS DOTENV
 
@@ -178,6 +177,6 @@ npm install express cors dotenv
 
 INSTALAR AXIOS
 
-npm install axios
+npm install axios nodemon
 
 --------------------------------------------------------------------------------------------
