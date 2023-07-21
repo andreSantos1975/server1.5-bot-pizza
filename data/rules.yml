@@ -11,3 +11,49 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Activate Pizza Form
+  steps:
+  - intent: buy_pizza
+  - action: simple_pizza_form
+  - active_loop: simple_pizza_form
+
+- rule: Submit Pizza Form
+  condition:
+  - active_loop: simple_pizza_form
+  steps:
+  - action: simple_pizza_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_pizza_slots
+
+- rule: Interruption in Pizza Form
+  condition:
+  # Condição de que o formulário está ativo.
+  - active_loop: simple_pizza_form
+  steps:
+  # Este caminho infeliz lida com o caso de uma intenção `bot_challenge`.
+  - intent: bot_challenge
+  - action: utter_iamabot
+  # Retorne ao formulário após manipular a intenção `bot_challenge`
+  - action: simple_pizza_form
+  - active_loop: simple_pizza_form
+
+- rule: Activate Fancy Pizza Form
+  steps:
+  - intent: buy_fancy_pizza
+  - action: fancy_pizza_form
+  - active_loop: fancy_pizza_form
+
+- rule: Submit Fancy Pizza Form
+  condition:
+  - active_loop: fancy_pizza_form
+  steps:
+  - action: fancy_pizza_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_pizza_slots

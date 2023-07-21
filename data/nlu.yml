@@ -29,16 +29,6 @@ nlu:
     - Bye Bye
     - até mais
 
-- intent: ask_cost
-  examples: |
-    - Qual é o custo para comprar um site?
-    - Quanto custa um site?
-    - Quero saber o preço de um site
-    - Qual é o valor para adquirir um site?
-    - Gostaria de saber o custo para comprar um site
-    - Quanto devo pagar para ter um site?
-    - Qual é o preço de um site?
-
 - intent: affirm
   examples: |
     - sim
@@ -98,3 +88,43 @@ nlu:
     - Você é um humano?
     - estou falando com um bot?
     - estou falando com um humano?
+    
+- intent: buy_fancy_pizza
+  examples: |
+     - eu gostaria de comprar uma pizza especial
+     - eu quero uma pizza especial
+     - posso comprar uma pizza especial
+     - Estou interessado em um pão achatado especial de origem italiana
+     - comprar uma pizza especial
+
+- intent: buy_pizza
+  examples: |
+     - eu gostaria de comprar uma pizza
+     - eu quero uma pizza
+     - posso comprar uma pizza
+     - quero comprar uma pizza
+     - Eu quero comprar uma pizza
+     - Estou interessado em um saboroso pão achatado redondo de origem italiana
+     - eu quero comprar uma pizza
+
+- intent: inform
+  examples: |
+    - Eu gostaria de um [grande](pizza_size) pizza
+    - eu quero pedir um [eg](pizza_size) [hawai](pizza_type) pizza
+    - [medium](pizza_size) pizza
+    - [eg](pizza_size)
+    - [pequena](pizza_size)
+    - [p](pizza_size)
+    - [pepperoni](pizza_type)
+    - me de um [mozerella](pizza_type) pizza
+    - [hawaii](pizza_type) pizza
+    - [media](pizza_size)
+    - [hawaii](pizza_type)
+    - eu quero um [grande](pizza_size) pizza
+    - [mozzarella](pizza_type)
+    - [hawai](pizza_type)
+    - [veggie](pizza_type)
+    - [fungi](pizza_type)
+    - eu quero uma pizza [grande](pizza_size) 
+    - [vegggie](pizza_type)
+    - [veggie](pizza_type)
